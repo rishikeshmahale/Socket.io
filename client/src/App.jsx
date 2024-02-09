@@ -49,6 +49,3 @@ const App = () => {
 }
 
 export default App
-
-// npm i @mui/material @emotion/react @emotion/styled
-// npm i socket.io-client
