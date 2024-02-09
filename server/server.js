@@ -21,12 +21,20 @@ const io = new Server(server, {
 
 
 io.on("connection", (socket) => {
-    console.log('User connected');
-    console.log("id", socket.id);
 
-    socket.emit("welcome", `Welcome to the server, ${socket.id}`);
+    console.log("User Connected" , socket.id)
 
-    socket.broadcast.emit("welcome", `${socket.id} joined the message`);
+    // socket.emit("welcome", `Welcome to the server, ${socket.id}`);
+
+    // socket.broadcast.emit("welcome", `${socket.id} joined the message`);
+
+    socket.on("message", (data) => {
+        console.log(data);
+    })
+
+    socket.on("disconnect", () => {
+        console.log("User Disconnected");
+    })
 
 });
 
