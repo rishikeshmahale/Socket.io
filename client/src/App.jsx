@@ -16,6 +16,11 @@ const App = () => {
 
     socket.on("welcome", (s) => {
       console.log(s);
+    });
+
+    socket.on("receive-message", (data) => {
+      console.log(data);
+      socket.broadcast.emit("receive-message", data);
     })
 
     return () => {
